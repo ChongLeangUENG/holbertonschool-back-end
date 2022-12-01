@@ -14,16 +14,16 @@ if __name__ == "__main__":
     data2 = response2.json()
 
     for idx in data2:
-        if idx.get("id") == int(argv[1]):
-            employee = idx.get("name")
+        if idx.get('id') == int(argv[1]):
+            employee = idx.get('name')
 
     for idx in data1:
-        if idx.get("userId") == int(argv[1]):
+        if idx.get('userId') == int(argv[1]):
             total += 1
 
-            if idx.get("completed") is True:
+            if idx.get('completed') is True:
                 completed += 1
-                tasks.append(idx.get("title"))
+                tasks.append(idx.get('title'))
 
     print("Employee {} is done with task({}/{}):".format(employee,
                                                          completed, total))
