@@ -13,20 +13,20 @@ if __name__ == "__main__":
     response2 = get('https://jsonplaceholder.typicode.com/users/')
     data2 = response2.json()
 
-    for idx in data2:
-        if idx.get('id') == int(argv[1]):
-            employee = idx.get('name')
+    for i in data2:
+        if i.get('id') == int(argv[1]):
+            employee = i.get('name')
 
-    for idx in data1:
-        if idx.get('userId') == int(argv[1]):
+    for i in data1:
+        if i.get('userId') == int(argv[1]):
             total += 1
 
-            if idx.get('completed') is True:
+            if i.get('completed') is True:
                 completed += 1
-                tasks.append(idx.get('title'))
+                tasks.append(i.get('title'))
 
     print("Employee {} is done with task({}/{}):".format(employee,
                                                          completed, total))
 
-    for idx in tasks:
-        print("\t {}".format(idx))
+    for i in tasks:
+        print("\t {}".format(i))
